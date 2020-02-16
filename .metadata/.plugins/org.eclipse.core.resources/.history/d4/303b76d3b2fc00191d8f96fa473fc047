@@ -1,0 +1,56 @@
+public class Twelve_days_of_christmas {
+
+	public static void main(String[] args) {
+		final int MAX_VERSES = 12;
+		final String VERSE_INTRO = "my true love gave to me,";
+		final String FIRST_VERSE = "A partridge in a pear tree";
+		final String SECOND_VERSE = "Two turtle doves";
+		final String THIRD_VERSE = "Three French hens";
+		for (int versesRead = 1; versesRead <= MAX_VERSES; versesRead++) {
+			System.out.println(versesRead);
+			switch (versesRead) {
+			case 1: 
+				System.out.print("On the first day of Christmas ");
+				break;
+			case 2:
+				System.out.print("On the second day of Christmas ");
+				break;
+			case 3:
+				System.out.print("On the third day of Christmas ");
+				break;
+			case 4:
+				System.out.print("On the fourth day of Christmas ");
+				break;
+			case 5:
+				System.out.print("On the fifth day of Christmas ");
+				break;
+			case 6:
+				System.out.print("On the sixth day of Christmas ");
+				break;
+			case 7:
+				System.out.print("On the seventh day of Christmas ");
+				break;
+			case 8:
+				System.out.print("On the eighth day of Christmas ");
+				break;
+			case 9:
+				System.out.print("On the nineth day of Christmas ");
+				break;
+			case 10:
+				System.out.print("On the tenth day of Christmas ");
+				break;
+			case 11:
+				System.out.print("On the eleventh day of Christmas ");
+				break;
+			default:
+				System.out.print("On the twelfth day of Christmas ");
+				break;
+			}
+			
+		}
+		
+		
+
+	}
+
+}

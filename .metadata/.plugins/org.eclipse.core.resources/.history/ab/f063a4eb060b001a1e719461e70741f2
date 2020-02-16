@@ -1,0 +1,90 @@
+/*      
+ Functions needed:
+ readDoubleFromUser: prompts the user with a question and returns a double that was inputed by the user
+ calculateMortgageRepayment: takes the principal and the duration of the mortgage (in years) and the APR of the mortgage returns monthly repayment.
+ calculateMonthsToRepayMortgage: takes mortgage amount, annual mortgage repayment  and the apr and returns the amount of months it will take to repay the mortgage.
+ */
+import java.util.Scanner;
+public class Mortgage_Calculator {
+final static String INCORRECT_INPUT = "Invalid input, please make a valid selection ";
+final static double MORTGAGE_TERM = 20;
+final static double PERCENTAGE_CONVERTER = 100;
+final static double MONTHS_IN_A_YEAR = 12;
+
+	public static void main(String[] args) {
+		readDoubleFromUser();
+		boolean finished = false;
+		while (finished!=true) {
+			System.out.print("Would you like to use the calculator again? ");
+			Scanner input = new Scanner (System.in);
+			if (input.hasNext("yes")){
+				readDoubleFromUser();
+			}
+			else if (input.hasNext("no")) {
+				finished = true;
+			}
+			else {
+				System.out.print("\nPlease make a valid selection ");
+			}
+		}
+	}
+	public static void readDoubleFromUser() {
+		Scanner input = new Scanner(System.in);
+		double  mortgageAmount = 0;
+		double annualPercentageRate = 0;
+		System.out.print("Please enter the mortgage amount: ");
+		if (input.hasNextDouble()) {
+			mortgageAmount = input.nextDouble();
+		}else {
+			System.out.print(INCORRECT_INPUT);
+			readDoubleFromUser();
+		}
+		System.out.print("Please enter the Annual Percentage Rate: ");
+		if (input.hasNextDouble()) {
+			annualPercentageRate = input.nextDouble();
+		}else {
+			System.out.print(INCORRECT_INPUT);
+			readDoubleFromUser();
+		}
+		System.out.print("Assuming a 20 year term, the monthly repayments would be " + 
+				Math.round(calculateMortgageRepayment(mortgageAmount, annualPercentageRate, MORTGAGE_TERM )));
+		
+		calculateMonthsToRepayMortgage(mortgageAmount, annualPercentageRate);
+	}
+	public static double calculateMortgageRepayment(double mortgageAmount, double annualPercentageRate, double MORTGAGE_TERM) {
+		double topOfEqn = (mortgageAmount * (((annualPercentageRate/MONTHS_IN_A_YEAR)/PERCENTAGE_CONVERTER))); 
+		double bottomOfEqn = (1-Math.pow(((1+((annualPercentageRate/MONTHS_IN_A_YEAR)/PERCENTAGE_CONVERTER))),(-1*MORTGAGE_TERM * MONTHS_IN_A_YEAR)));
+		double amount = topOfEqn/bottomOfEqn;
+		return amount;
+	}
+	public static void calculateMonthsToRepayMortgage(double mortgageAmount, double annualPercentageRate) {
+		System.out.print("\nHow much can you afford to pay per month? ");
+		boolean finished = false;
+		int monthCharged = 0;
+		int yearCharged = 0;
+		Scanner input = new Scanner(System.in);
+		double monthlyPayment = input.nextDouble();
+		System.out.print("Mortgage amount: " + mortgageAmount + "\nAPR: " + annualPercentageRate + "\nMonthly Payment: " + monthlyPayment);
+		while (finished != true) {
+			mortgageAmount = mortgageAmount + (mortgageAmount * ((annualPercentageRate/PERCENTAGE_CONVERTER)/MONTHS_IN_A_YEAR));
+			mortgageAmount = mortgageAmount - monthlyPayment;
+			monthCharged++;
+			if (monthCharged == 12) {
+				yearCharged++;
+				monthCharged = 0;
+			}
+			if (mortgageAmount <= 0) {
+				finished = true;
+			}
+			
+			
+		}
+		System.out.print("\nIf you pay " + monthlyPayment + " your mortgage would be paid off in " + yearCharged +
+				" years and " + monthCharged + " months");
+	}
+
+		
+	}
+	
+
+

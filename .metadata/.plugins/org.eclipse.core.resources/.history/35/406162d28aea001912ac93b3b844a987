@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class MinMaxnumbers {
+	public static void main(String[] args) {
+
+		System.out.println("please input numbers, seperate them with a space");
+		Scanner inputScanner = new Scanner(System.in);
+		System.out.println(inputScanner.nextInt());
+		
+
+	}
+
+}

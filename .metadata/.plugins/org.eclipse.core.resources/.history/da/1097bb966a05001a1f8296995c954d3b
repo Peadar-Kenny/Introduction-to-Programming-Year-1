@@ -1,0 +1,96 @@
+public class Twelve_days_of_christmas {
+	/* SELF ASSESSMENT
+	   1. Did I use appropriate CONSTANTS instead of numbers within the code?
+	       Mark out of 5: 5
+	       Comment: I have hard coded no numbers into the program
+	   2. Did I use easy-to-understand, meaningful CONSTANT names formatted correctly in UPPERCASE?
+	       Mark out of 5: 5
+	       Comment: All my constant names are easy-to-understand, meangingful and formatted in uppercase.
+	   3. Did I use easy-to-understand meaningful variable names formatted properly (in lowerCamelCase)?
+	       Mark out of 10: 10
+	       Comment: all my variable names are formatted in lower camel case 
+	   4. Did I indent the code appropriately?
+	       Mark out of 10: 10
+	       Comment: All my code is indented correctly
+	   5. Did I use an appropriate loop (or loops) to produce the different verses?
+	       Mark out of 20: 20
+	       Comment: I used a switch statement as was requested in the question and a for loop. These worked perfectly
+	   6. Did I use a switch to build up the verses?
+	       Mark out of 25: 25
+	       Comment: I used a switch statement to build up the verses
+	   7. Did I avoid duplication of code and of the lines which make up the verses (each line should be referred to in the code only once (or twice))?
+	       Mark out of 10: 10
+	       Comment: I used a constant to print out every single verse
+	   8. Does the program produce the correct output?
+	       Mark out of 10: 10
+	       Comment: The program output matches the specified output
+	   9. How well did I complete this self-assessment?
+	       Mark out of 5: 5
+	       Comment: I have Completed this assessment to the best of my ability.
+	   Total Mark out of 100 (Add all the previous marks):
+	*/
+	public static void main(String[] args) {
+		final int MAX_VERSES = 12;
+		final String VERSE_INTRO = "\nMy true love gave to me: ";
+		final String FIRST_VERSE_INITIAL = "\nA partridge in a pear tree. ";
+		final String FIRST_VERSE = "\nAnd a partridge in a pear tree. ";
+		final String SECOND_VERSE = "\nTwo turtle doves, ";
+		final String THIRD_VERSE = "\nThree French hens, ";
+		final String FOURTH_VERSE = "\nFour calling birds, ";
+		final String FIFTH_VERSE = "\nFive gold rings, ";
+		final String SIXTH_VERSE = "\nSix geese a-laying, ";
+		final String SEVENTH_VERSE = "\nSeven swans a-swimming, ";
+		final String EIGHTH_VERSE = "\nEight maids a-milking, ";
+		final String NINTH_VERSE = "\nNine ladies dancing, ";
+		final String TENTH_VERSE = "\nTen lords a-leaping, ";
+		final String ELEVENTH_VERSE = "\nEleven pipers piping, ";
+		final String TWELFTH_VERSE = "\nTwelve drummers drumming, ";
+		 
+		for (int versesRead = 1; versesRead <= MAX_VERSES; versesRead++) {
+			System.out.print("\n" + versesRead + ". ");
+			switch (versesRead) {
+			case 1: 
+				System.out.print("On the first day of Christmas " + VERSE_INTRO + FIRST_VERSE_INITIAL);
+				break;
+			case 2:
+				System.out.print("On the second day of Christmas " + VERSE_INTRO + SECOND_VERSE + FIRST_VERSE);
+				break;
+			case 3:
+				System.out.print("On the third day of Christmas " + VERSE_INTRO + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			case 4:
+				System.out.print("On the fourth day of Christmas " + VERSE_INTRO + FOURTH_VERSE + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			case 5:
+				System.out.print("On the fifth day of Christmas " + VERSE_INTRO + FIFTH_VERSE + FOURTH_VERSE + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			case 6:
+				System.out.print("On the sixth day of Christmas " + VERSE_INTRO + SIXTH_VERSE + FIFTH_VERSE + FOURTH_VERSE + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			case 7:
+				System.out.print("On the seventh day of Christmas " + VERSE_INTRO + SEVENTH_VERSE + SIXTH_VERSE + FIFTH_VERSE + FOURTH_VERSE + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			case 8:
+				System.out.print("On the eighth day of Christmas " + VERSE_INTRO + EIGHTH_VERSE + SEVENTH_VERSE + SIXTH_VERSE + FIFTH_VERSE + FOURTH_VERSE + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			case 9:
+				System.out.print("On the nineth day of Christmas " + VERSE_INTRO + NINTH_VERSE + EIGHTH_VERSE + SEVENTH_VERSE + SIXTH_VERSE + FIFTH_VERSE + FOURTH_VERSE + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			case 10:
+				System.out.print("On the" + day + "day of Christmas " + VERSE_INTRO + TENTH_VERSE + NINTH_VERSE + EIGHTH_VERSE + SEVENTH_VERSE + SIXTH_VERSE + FIFTH_VERSE + FOURTH_VERSE + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			case 11:
+				System.out.print("On the" + day + "day of Christmas " + VERSE_INTRO + ELEVENTH_VERSE + TENTH_VERSE + NINTH_VERSE + EIGHTH_VERSE + SEVENTH_VERSE + SIXTH_VERSE + FIFTH_VERSE + FOURTH_VERSE + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			default:
+				System.out.print("On the" + day + "day of Christmas " + VERSE_INTRO + TWELFTH_VERSE + ELEVENTH_VERSE + TENTH_VERSE + NINTH_VERSE + EIGHTH_VERSE + SEVENTH_VERSE + SIXTH_VERSE + FIFTH_VERSE + FOURTH_VERSE + THIRD_VERSE + SECOND_VERSE + FIRST_VERSE);
+				break;
+			}
+			
+		}
+		
+		
+
+	}
+
+}

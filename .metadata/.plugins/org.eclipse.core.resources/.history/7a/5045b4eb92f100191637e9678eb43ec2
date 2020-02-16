@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class eTest {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		final int MINIMUM_AGE = 13;
+		final int MAXIMUM_AGE = 19;
+		final int PERCENTAGE_CONVERTER = 100;
+		int totalAge = 0;
+		int age = 0;
+		int agesEntered = 0;
+		int averageAge = 0;
+		int teenagers = 0;
+		int teenagePercentage = 0;
+		boolean finished = false;
+		while (finished != true) {
+			System.out.println("Please enter a person's age (or ''quit'') Please ensure to press enter after each number you enter ");
+			if(input.hasNextInt() ) {
+				age = input.nextInt();
+				totalAge = totalAge + age;
+				agesEntered++;
+				averageAge = totalAge / agesEntered;
+				if (age >= MINIMUM_AGE && age <= MAXIMUM_AGE) {
+					teenagers++;
+					}
+				teenagePercentage = (teenagers / agesEntered) * PERCENTAGE_CONVERTER;
+				System.out.println("You have entered " + teenagers + " and there has been " + agesEntered + " ages entered");
+				System.out.println("The average age entered is " + averageAge + " and " + teenagePercentage + 
+						"% of the ages correspond to teenagers ");
+			}else if (input.hasNext("quit")) {
+				finished = true;
+			}else {
+				System.out.println("Invalid selection entered, terminating program");
+				finished = true;
+			}
+			
+		}
+
+		System.out.println("The average age entered was " + averageAge + " and " + teenagePercentage + 
+				"% of the ages corresponded to teenagers ");
+		input.close();
+	}
+
+}

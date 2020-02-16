@@ -1,0 +1,39 @@
+/*      
+ Functions needed:
+ readDoubleFromUser: prompts the user with a question and returns a double that was inputed by the user
+ calculateMortgageRepayment: takes the principal and the duration of the mortgage (in years) and the APR of the mortgage.
+ calculateMonthsToRepayMortgage: takes mortgage amount, annual mortgage repayment  and the apr and returns the amount of months it will take to repay the mortgage.
+ */
+import java.util.Scanner;
+public class Mortgage_Calculator {
+final static String INCORRECT_INPUT = "Invalid input, please make a valid selection ";
+final int MORTGAGE_TERM = 20;
+	public static void main(String[] args) {
+		
+		
+		System.out.print(readDoubleFromUser());
+
+	}
+	public static double readDoubleFromUser() {
+		Scanner input = new Scanner(System.in);
+		double  mortgageAmount = 0;
+		double annualPercentageRate = 0;
+		System.out.print("Please enter the mortgage amount: ");
+		if (input.hasNextDouble()) {
+			mortgageAmount = input.nextDouble();
+		}else {
+			System.out.print(INCORRECT_INPUT);
+			readDoubleFromUser();
+		}
+		System.out.print("Please enter the Annual Percentage Rate: ");
+		if (input.hasNextDouble()) {
+			annualPercentageRate = input.nextDouble();
+		}else {
+			System.out.print(INCORRECT_INPUT);
+			readDoubleFromUser();
+		}
+		input.close;
+		return mortgageAmount + annualPercentageRate;
+	}
+
+}

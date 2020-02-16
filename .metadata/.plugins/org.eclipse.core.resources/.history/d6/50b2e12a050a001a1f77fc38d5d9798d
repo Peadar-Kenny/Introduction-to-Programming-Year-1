@@ -1,0 +1,49 @@
+/*      
+ Functions needed:
+ readDoubleFromUser: prompts the user with a question and returns a double that was inputed by the user
+ calculateMortgageRepayment: takes the principal and the duration of the mortgage (in years) and the APR of the mortgage returns monthly repayment.
+ calculateMonthsToRepayMortgage: takes mortgage amount, annual mortgage repayment  and the apr and returns the amount of months it will take to repay the mortgage.
+ */
+import java.util.Scanner;
+public class Mortgage_Calculator {
+final static String INCORRECT_INPUT = "Invalid input, please make a valid selection ";
+final static double MORTGAGE_TERM = 20;
+final static double PERCENTAGE_CONVERTER = 100;
+final static double MONTHS_IN_A_YEAR = 12;
+
+	public static void main(String[] args) {
+		readDoubleFromUser();
+	}
+	public static void readDoubleFromUser() {
+		Scanner input = new Scanner(System.in);
+		double  mortgageAmount = 0;
+		double annualPercentageRate = 0;
+		System.out.print("Please enter the mortgage amount: ");
+		if (input.hasNextDouble()) {
+			mortgageAmount = input.nextDouble();
+		}else {
+			System.out.print(INCORRECT_INPUT);
+			readDoubleFromUser();
+		}
+		System.out.print("Please enter the Annual Percentage Rate: ");
+		if (input.hasNextDouble()) {
+			annualPercentageRate = input.nextDouble();
+		}else {
+			System.out.print(INCORRECT_INPUT);
+			readDoubleFromUser();
+		}
+		System.out.print("Assuming a 20 year term, the monthly repayments would be "); 
+		calculateMortgageRepayment(mortgageAmount, annualPercentageRate, MORTGAGE_TERM );
+	}
+	public static void calculateMortgageRepayment(double mortgageAmount, double annualPercentageRate, double MORTGAGE_TERM) {
+		annualPercentageRate = annualPercentageRate / PERCENTAGE_CONVERTER;
+		double topOfEqn = (mortgageAmount * ((annualPercentageRate/MONTHS_IN_A_YEAR/PERCENTAGE_CONVERTER))); 
+		double bottomOfEqn =Math.pow((1 - (1+annualPercentageRate/MONTHS_IN_A_YEAR/PERCENTAGE_CONVERTER)),(-1*MORTGAGE_TERM * MONTHS_IN_A_YEAR));
+		System.out.print(topOfEqn + " " + bottomOfEqn);
+	}
+
+		
+	}
+	
+
+
