@@ -41,7 +41,7 @@ public class ChuckAluck {
 		Wallet wallet = new Wallet();
 		Scanner input = new Scanner(System.in);
 		System.out.println("Please input how much money you want to play with: ");
-		int initialCash = input.nextInt();
+		double initialCash = input.nextDouble();
 		wallet.put(initialCash);
 		while (finished!=true){
 			System.out.println("Please select which type of bet you want to make: (triple, high, low, field). Or type 'quit'");
@@ -77,10 +77,10 @@ public class ChuckAluck {
 		}
 		boolean betDone = false;
 		int diceTotal=0;
-		double currentBet; 
+		double currentBet;
 		while (betDone != true) {
 			System.out.println("You have: €" + wallet.check() + " cash remaining. How much do you want to place on this game?");
-			currentBet = input.nextDouble();
+			currentBet = input.nextFloat();
 			if(wallet.get(currentBet) == true) {
 				for(int i = 0; i < dice.length; i++) {
 					dice[i].roll();
