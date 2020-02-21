@@ -38,10 +38,17 @@ public class ChuckAluck {
 
 	public static void main(String[] args) {
 		boolean finished = false;
+		double initialCash = 0;
 		Wallet wallet = new Wallet();
 		Scanner input = new Scanner(System.in);
-		System.out.println("Please input how much money you want to play with: ");
-		double initialCash = input.nextDouble();
+		boolean betOk= false;
+		while(betOk!= true) {
+			System.out.println("Please input how much money you want to play with: ");
+			initialCash = input.nextDouble();
+			if (initialCash >0){
+				betOk = true;
+			}
+		}
 		wallet.put(initialCash);
 		while (finished!=true){
 			System.out.println("Please select which type of bet you want to make: (triple, high, low, field). Or type 'quit'");
