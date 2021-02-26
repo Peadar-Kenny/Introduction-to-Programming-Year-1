@@ -1,0 +1,9 @@
+name: ManhuntPlugin
+main: SkyRaiderDev.ManhuntPlugin.Manhunt
+version: 1.0
+commands:
+  broadcast:
+    description: This will broadcast all player positions
+    usage: /<command>
+    permission: <manhuntPlugin>.basic
+    permission-message: you don't have permission

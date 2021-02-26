@@ -346,6 +346,16 @@ IEclipsePreferences#com-dubture-twig-ui {
 		'editorColorLineComment=#C7DD0C | null | null | false | null | null'
 		'editorColorNumber=#7FB347 | null | null | null | null | null'
 }
+IEclipsePreferences#com-genuitec-eclipse-sqlexplorer {
+	preferences:
+		'sql_columns=171,115,255'
+		'sql_default=210,215,218'
+		'sql_keyword=141,203,226'
+		'sql_multi_line_comment=199,221,12'
+		'sql_single_line_comment=199,221,12'
+		'sql_string=255,198,0'
+		'sql_table=49,132,255'
+}
 IEclipsePreferences#com-github-rustdt-ide-ui {
 	preferences:
 		'editor.coloring2.number#dark#=127,179,71'
@@ -2039,8 +2049,12 @@ IEclipsePreferences#org-eclipse-ui-editors {
 		'AbstractTextEditor.Color.SelectionBackground.SystemDefault=false'
 		'AbstractTextEditor.Color.SelectionForeground=146,157,165'
 		'AbstractTextEditor.Color.SelectionForeground.SystemDefault=false'
+		'LSP4EReadOccurrenceIndicationColor=26,95,140'
+		'LSP4ETextOccurrenceIndicationColor=26,95,140'
+		'LSP4EWriteOccurrenceIndicationColor=26,95,140'
 		'PHPReadOccurrenceIndicationColor=65,65,4'
 		'PHPWriteOccurrenceIndicationColor=65,65,4'
+		'TM4EMatchingPairColor=26,95,140'
 		'TextOccurrenceIndicationColor=27, 98, 145'
 		'asOccurencesIndicationColor=65,65,4'
 		'breakpointIndicationColor=49,115,187'
